@@ -29,7 +29,7 @@ function install_puppet_module {
 	fi
 	echo "Checking if puppet module is installed: $1"
 	/opt/puppetlabs/bin/puppet module list | grep $1
-	if [[ $? -ne 0]]; then
+	if [[ $? -ne 0 ]]; then
 		echo "Installing puppet module: $1"
 		/opt/puppetlabs/bin puppet module install $1
 	fi
