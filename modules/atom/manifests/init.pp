@@ -14,4 +14,10 @@ class atom {
       Apt::Key['ppa:webupd8team/atom'],
     ],
   }
+
+  package { 'language-puppet':
+    ensure => latest,
+    require => Package['atom'],
+    provider => 'apm',
+  }
 }

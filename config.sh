@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PUPFILES_DIR=~/.pupfiles
-REQUIRED_PUPPET_MODULES="puppetlabs-vcsrepo puppetlabs-apt acme-ohmyzsh"
+REQUIRED_PUPPET_MODULES="puppetlabs-vcsrepo puppetlabs-apt acme-ohmyzsh cyberious-apm"
 
 echo "Checking if root..."
 if [[ $(id -u) -ne 0 ]]; then
