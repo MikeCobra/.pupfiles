@@ -34,4 +34,20 @@ class atom {
     command => '/bin/chown -R michaelc:michaelc /home/michaelc/.atom',
     refreshonly => true,
   }
+
+  file { '/home/michaelc/.atom/config.cson':
+    ensure => file,
+    source => 'puppet:///modules/atom/config.cson',
+    owner  => 'michaelc',
+    group  => 'michaelc',
+    mode   => '0644',
+  }
+
+  file { '/home/michaelc/.atom/styles.less':
+    ensure => file,
+    source => 'puppet:///modules/atom/styles.less',
+    owner  => 'michaelc',
+    group  => 'michaelc',
+    mode   => '0644',
+  }
 }
