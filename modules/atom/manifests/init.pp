@@ -24,7 +24,7 @@ class atom {
   }
 
   exec { 'atom-permissions':
-    command => 'chown -R michaelc:michaelc /home/michaelc/.atom',
+    command => '/bin/chown -R michaelc:michaelc /home/michaelc/.atom',
     refreshonly => true,
   }
 }
