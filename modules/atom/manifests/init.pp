@@ -1,7 +1,8 @@
 class atom {
+  apt::ppa { 'http://ppa.launchpad.net/webupd8team/atom/ubuntu': }
+
   package { 'atom':
-    ensure   => installed,
-    provider => 'dpkg',
-    source   => 'https://github.com/atom/atom/releases/download/v1.1.0/atom-amd64.deb',
+    ensure  => latest,
+    require => Apt::PPA['http://ppa.launchpad.net/webupd8team/atom/ubuntu'],
   }
 }
