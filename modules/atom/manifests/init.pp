@@ -23,6 +23,13 @@ class atom {
     notify   => Exec['atom-permissions'],
   }
 
+  package { 'base16-syntax':
+    ensure   => latest,
+    require  => Package['atom'],
+    provider => 'apm',
+    notify   => Exec['atom-permissions'],
+  }
+
   exec { 'atom-permissions':
     command => '/bin/chown -R michaelc:michaelc /home/michaelc/.atom',
     refreshonly => true,
