@@ -6,7 +6,6 @@ class kde {
     group  => 'michaelc',
     mode   => '0644',
   }
-  ~/.config/plasmarc
 
   file { '/home/michaelc/.config/plasmarc':
     ensure => file,
@@ -15,5 +14,4 @@ class kde {
     group  => 'michaelc',
     mode   => '0644',
   }
-
 }
