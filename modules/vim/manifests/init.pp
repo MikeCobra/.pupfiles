@@ -28,7 +28,7 @@ class vim {
   file { '/home/michaelc/.vim/autoload/pathogen.vim':
     ensure  => file,
     require => File['/home/michaelc/.vim/autoload'],
-    source  => 'puppet:///modules/vim/vimrc',
+    source  => 'puppet:///modules/vim/pathogen.vim',
     owner   => 'michaelc',
     group   => 'michaelc',
     mode    => '0644',
