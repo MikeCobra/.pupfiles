@@ -18,4 +18,4 @@ if [ -d $PUPFILES_DIR/.git ]; then
 else
 	git clone https://github.com/MikeCobra/.pupfiles.git $PUPFILES_DIR
 fi
-/opt/puppetlabs/bin/puppet apply --modulepath $PUPFILES_DIR/modules $PUPFILES_DIR/manifests/desktop.pp
+/opt/puppetlabs/bin/puppet apply --modulepath "$PUPFILES_DIR/modules:/etc/puppetlabs/code/environments/production/modules" $PUPFILES_DIR/manifests/desktop.pp
