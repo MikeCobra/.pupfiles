@@ -9,4 +9,5 @@
   editor:
     invisibles: {}
     fontFamily: "Ubuntu Mono"
+    fontSize: 15
     showInvisibles: true
