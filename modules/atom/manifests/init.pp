@@ -16,6 +16,11 @@ class atom {
     notify  => Exec['atom-permissions'],
   }
 
+  package { 'puppet-lint':
+    ensure   => latest,
+    provider => 'gem'
+  }
+
   package { 'language-puppet':
     ensure   => latest,
     require  => Package['atom'],
