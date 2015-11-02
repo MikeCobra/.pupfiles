@@ -23,6 +23,13 @@ class atom {
     notify   => Exec['atom-permissions'],
   }
 
+  package { 'linter-puppet-lint':
+    ensure   => latest,
+    require  => Package['atom'],
+    provider => 'apm',
+    notify   => Exec['atom-permissions'],
+  }
+
   package { 'base16-syntax':
     ensure   => latest,
     require  => Package['atom'],
@@ -49,5 +56,19 @@ class atom {
     owner  => 'michaelc',
     group  => 'michaelc',
     mode   => '0644',
+  }
+
+  file { '/home/michaelc/.atom/packages/base16-syntax/styles/schemes/yesterday-bright.less':
+    ensure => file,
+    source => 'puppet:///modules/atom/yesterday-bright.less',
+    owner  => 'michaelc',
+    group  => 'michaelc',
+    mode   => '0644',
+  }
+
+  file_line { 'yesterday-bright':
+    path  => '/home/michaelc/.atom/packages/base16-syntax/lib/base16-settings.coffee',
+    line  => '        "Yesterday Bright"',
+    after => '        "Twilight",',
   }
 }

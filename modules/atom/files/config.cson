@@ -4,10 +4,14 @@
   core:
     themes: [
       "one-dark-ui"
-      "base16-tomorrow-dark-theme"
+      "base16-syntax"
     ]
   editor:
     invisibles: {}
     fontFamily: "Ubuntu Mono"
     fontSize: 15
     showInvisibles: true
+  "base16-syntax":
+    matchUserInterfaceTheme: false
+    scheme: "Yesterday Bright"
+  "one-dark-ui": {}
