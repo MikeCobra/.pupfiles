@@ -11,18 +11,27 @@ class vim {
     mode   => '0644',
   }
 
-  file { '/home/michaelc/.vim/bundle':
+  file { '/home/michaelc/.vim':
     ensure => directory,
     owner  => 'michaelc',
     group  => 'michaelc',
     mode   => '0755',
   }
 
+  file { '/home/michaelc/.vim/bundle':
+    ensure  => directory,
+    require => File['/home/michaelc/.vim'],
+    owner   => 'michaelc',
+    group   => 'michaelc',
+    mode    => '0755',
+  }
+
   file { '/home/michaelc/.vim/autoload':
-    ensure => directory,
-    owner  => 'michaelc',
-    group  => 'michaelc',
-    mode   => '0755',
+    ensure  => directory,
+    require => File['/home/michaelc/.vim'],
+    owner   => 'michaelc',
+    group   => 'michaelc',
+    mode    => '0755',
   }
 
   file { '/home/michaelc/.vim/autoload/pathogen.vim':
@@ -36,7 +45,7 @@ class vim {
 
   vcsrepo { '/home/michaelc/.vim/bundle/sensible.vim':
     ensure   => present,
-    require => File['/home/michaelc/.vim/bundle'],
+    require  => File['/home/michaelc/.vim/bundle'],
     provider => git,
     source   => 'git://github.com/tpope/vim-sensible.git',
   }
