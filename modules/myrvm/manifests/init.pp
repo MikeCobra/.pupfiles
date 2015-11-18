@@ -1,4 +1,4 @@
-class rvm {
+class myrvm {
   class { '::rvm': }
 
   rvm::system_user { 'michaelc': ; }
